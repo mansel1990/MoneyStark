@@ -1,0 +1,65 @@
+.bg-gradient-orange {
+  background: linear-gradient(87deg, #fb6340 0, #fbb140 100%);
+}
+
+.bg-gradient-red {
+  background: @primary-red-light;
+}
+
+.bg-gradient-green {
+  background: @primary-green-light;
+}
+
+.bg-gradient-blue {
+  background: @primary-color-light;
+}
+.dashboard-header {
+  padding: 10px 0px;
+  .chart-img {
+    width: 100px;
+    position: absolute;
+    left: 26px;
+    top: 34px;
+    opacity: 0.5;
+  }
+  .trend-box {
+    padding: 5px 0 5px 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    .trend-box-title {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .trend-box-value {
+      font-size: 18px;
+    }
+  }
+  .trend-box:hover {
+    transform: translateY(-5px);
+  }
+  .card {
+    border: 0px;
+    @media @mobile, @tablet {
+      margin: 5px 0;
+    }
+  }
+}
+.summary-tabs {
+  margin-top: 2rem;
+}
+.overview-tab {
+  .overview-tab-col {
+    display: flex;
+    justify-content: center;
+  }
+  .overview-tab-pie {
+    height: 200px;
+    margin: 2rem 0;
+    @media @mobile, @tablet {
+      position: relative;
+      left: 40px;
+    }
+  }
+}
