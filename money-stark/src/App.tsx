@@ -25,27 +25,22 @@ import routerBindings, {
 } from "@refinedev/react-router-v6";
 import dataProvider from "@refinedev/simple-rest";
 import axios from "axios";
-import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Outlet,
+  Route,
+  Routes,
+} from "react-router-dom";
 import { AppIcon } from "./components/app-icon";
 import { Header } from "./components/header";
 import { ColorModeContextProvider } from "./contexts/color-mode";
 import { CredentialResponse } from "./interfaces/google";
-import {
-  BlogPostCreate,
-  BlogPostEdit,
-  BlogPostList,
-  BlogPostShow,
-} from "./pages/blog-posts";
 import { Profile } from "./pages/dashboard";
-import {
-  CategoryCreate,
-  CategoryEdit,
-  CategoryList,
-  CategoryShow,
-} from "./pages/categories";
 import { Login } from "./pages/login";
 import { parseJwt } from "./utils/parse-jwt";
 import "./styles/App.less";
+import PredictionList from "./pages/PredictionList/PredictionList";
 
 const axiosInstance = axios.create();
 axiosInstance.interceptors.request.use((config) => {
@@ -149,28 +144,15 @@ function App() {
                 routerProvider={routerBindings}
                 resources={[
                   {
+                    name: "prediction_list",
+                    list: "/prediction-list",
+                    meta: {
+                      canDelete: true,
+                    },
+                  },
+                  {
                     name: "dashboard",
                     list: "/dashboard",
-                    meta: {
-                      canDelete: true,
-                    },
-                  },
-                  {
-                    name: "blog_posts",
-                    list: "/blog-posts",
-                    create: "/blog-posts/create",
-                    edit: "/blog-posts/edit/:id",
-                    show: "/blog-posts/show/:id",
-                    meta: {
-                      canDelete: true,
-                    },
-                  },
-                  {
-                    name: "categories",
-                    list: "/categories",
-                    create: "/categories/create",
-                    edit: "/categories/edit/:id",
-                    show: "/categories/show/:id",
                     meta: {
                       canDelete: true,
                     },
@@ -207,22 +189,13 @@ function App() {
                   >
                     <Route
                       index
-                      element={<NavigateToResource resource="dashboard" />}
+                      element={<Navigate to="/prediction-list" replace />}
                     />
                     <Route path="/dashboard">
                       <Route index element={<Profile />} />
                     </Route>
-                    <Route path="/blog-posts">
-                      <Route index element={<BlogPostList />} />
-                      <Route path="create" element={<BlogPostCreate />} />
-                      <Route path="edit/:id" element={<BlogPostEdit />} />
-                      <Route path="show/:id" element={<BlogPostShow />} />
-                    </Route>
-                    <Route path="/categories">
-                      <Route index element={<CategoryList />} />
-                      <Route path="create" element={<CategoryCreate />} />
-                      <Route path="edit/:id" element={<CategoryEdit />} />
-                      <Route path="show/:id" element={<CategoryShow />} />
+                    <Route path="/prediction-list">
+                      <Route index element={<PredictionList />} />
                     </Route>
                     <Route path="*" element={<ErrorComponent />} />
                   </Route>
