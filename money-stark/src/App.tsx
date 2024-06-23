@@ -33,7 +33,7 @@ import {
   Routes,
 } from "react-router-dom";
 import { AppIcon } from "./components/app-icon";
-import { Header } from "./components/header";
+import { Header } from "./components/header/Header";
 import { ColorModeContextProvider } from "./contexts/color-mode";
 import { CredentialResponse } from "./interfaces/google";
 import { Profile } from "./pages/dashboard";
