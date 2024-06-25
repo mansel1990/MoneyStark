@@ -17,7 +17,7 @@ type IUser = {
   avatar: string;
 };
 
-export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = ({
+const Header: React.FC<RefineThemedLayoutV2HeaderProps> = ({
   sticky = true,
 }) => {
   const { mode, setMode } = useContext(ColorModeContext);
@@ -78,3 +78,5 @@ export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = ({
     </AppBar>
   );
 };
+
+export default Header;

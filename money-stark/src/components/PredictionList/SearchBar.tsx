@@ -43,6 +43,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       <TextField
         fullWidth
         placeholder="Investment amount in rupees"
+        className="search-input"
         value={query}
         type="number"
         onChange={handleInputChange}
@@ -54,6 +55,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
               </IconButton>
             </InputAdornment>
           ),
+          inputProps: {
+            step: "any",
+          },
           disableUnderline: true,
         }}
         variant="standard"

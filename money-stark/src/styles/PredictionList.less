@@ -1,6 +1,79 @@
-.data-grid-header {
-  background-color: #f0f0f0;
-  .MuiDataGrid-columnHeaderTitleContainer {
-    font-weight: bold;
+.prediction-table {
+  width: 100%;
+  padding: 10px;
+
+  .prediction-item {
+    margin-bottom: 10px;
+    .MuiAccordionSummary-expandIconWrapper {
+      color: #333;
+    }
+
+    .MuiAccordion-root {
+      background-color: @light-background-color;
+      color: @light-header-color;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+
+      &.dark {
+        background-color: @dark-background-color;
+        color: @dark-header-color;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    .MuiAccordionSummary-root {
+      background-color: @light-background-color;
+      color: @light-header-color;
+      border-bottom: 1px solid #ddd;
+
+      .MuiIconButton-root {
+        color: @light-primary-color; /* Light mode icon color */
+      }
+
+      &.dark {
+        background-color: @dark-background-color;
+        color: @dark-header-color;
+
+        .MuiIconButton-root {
+          color: @dark-header-color;
+        }
+        .MuiAccordionSummary-expandIconWrapper {
+          color: @dark-header-color !important;
+        }
+      }
+    }
+
+    .MuiAccordionDetails-root {
+      padding: 10px;
+      background-color: @light-background-color;
+      color: @light-header-color;
+
+      &.dark {
+        background-color: @dark-background-color;
+        color: @dark-header-color;
+      }
+    }
+
+    .prediction-details {
+      width: 100%;
+
+      p {
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .MuiAccordion-root:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.search-input {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { formatRupee } from "../../utils/utils";
 import { Row, Col } from "antd";
-import StatCard from "../../components/StatCard";
+import StatCard from "../../components/Dashboard/StatCard";
 
 const investmentData = {
   investedValue: 100000,
@@ -10,7 +10,7 @@ const investmentData = {
   realizedPL: -2000.21,
 };
 
-export const Profile = () => {
+const Dashboard = () => {
   const [unrealizedCls, setUnrealizedCls] = useState("bg-gradient-green");
   const [realizedCls, setRealizedCls] = useState("bg-gradient-green");
 
@@ -62,3 +62,5 @@ export const Profile = () => {
     </div>
   );
 };
+
+export default Dashboard;

@@ -3,16 +3,26 @@
 }
 
 .bg-gradient-red {
-  background: @primary-red-light;
+  background: @light-primary-red-light; // Default to light theme color
+  .theme-dark & {
+    background: @dark-primary-red-light; // Override for dark theme
+  }
 }
 
 .bg-gradient-green {
-  background: @primary-green-light;
+  background: @light-primary-green-light; // Default to light theme color
+  .theme-dark & {
+    background: @dark-primary-green-light; // Override for dark theme
+  }
 }
 
 .bg-gradient-blue {
-  background: @primary-color-light;
+  background: @light-primary-color-light; // Default to light theme color
+  .theme-dark & {
+    background: @dark-primary-color-light; // Override for dark theme
+  }
 }
+
 .dashboard-header {
   padding: 10px 0px;
   .chart-img {
@@ -29,7 +39,10 @@
     transition: transform 0.3s ease;
     .trend-box-title {
       font-size: 14px;
-      color: #333;
+      color: #333; // Default text color
+      .theme-dark & {
+        color: @white; // Override for dark theme
+      }
     }
 
     .trend-box-value {
@@ -46,9 +59,11 @@
     }
   }
 }
+
 .summary-tabs {
   margin-top: 2rem;
 }
+
 .overview-tab {
   .overview-tab-col {
     display: flex;

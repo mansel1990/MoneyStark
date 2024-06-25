@@ -1,23 +1,39 @@
-@primary-color: #2196f3;
-@primary-color-light: #bbdefb;
-@primary-color-dark: #1565c0;
+// Light mode variables
+@light-primary-color: #2196f3;
+@light-primary-color-light: #bbdefb;
+@light-primary-color-dark: #1565c0;
+@light-primary-green: #4caf50;
+@light-primary-green-light: #c8e6c9;
+@light-primary-green-dark: #388e3c;
+@light-primary-red: #f44336;
+@light-primary-red-light: #e6acab;
+@light-primary-red-dark: #d32f2f;
+@light-background-color: #fdfdff;
+@light-header-color: #333;
 
-@primary-green: #4caf50;
-@primary-green-light: #c8e6c9;
-@primary-green-dark: #388e3c;
+// Dark mode variables
+@dark-primary-color: #3f51b5;
+@dark-primary-color-light: #9fa8da;
+@dark-primary-color-dark: #303f9f;
+@dark-primary-green: #8bc34a;
+@dark-primary-green-light: #aed581;
+@dark-primary-green-dark: #689f38;
+@dark-primary-red: #e57373;
+@dark-primary-red-light: #ef9a9a;
+@dark-primary-red-dark: #d32f2f;
+@dark-background-color: #1f1f1f;
+@dark-header-color: #e0e0e0;
 
-@primary-red: #f44336;
-@primary-red-light: #e6acab;
-@primary-red-dark: #d32f2f;
-
+// Common variables
 @white: #ffffff;
 @black: #000000;
-@background-color: #f0f0f0;
 
+// Media queries (if needed)
 @desktop: ~"only screen and (min-width: 960px) and (max-width: 1199px)";
 @tablet: ~"only screen and (min-width: 720px) and (max-width: 959px)";
 @mobile: ~"only screen and (max-width: 480px)";
 
+// Import other Less files
 @import url("./Dashboard.less");
 @import url("./StatCard.less");
 @import url("./PredictionList.less");

@@ -3,6 +3,7 @@ import { RefineThemes } from "@refinedev/mui";
 import React, {
   createContext,
   PropsWithChildren,
+  useContext,
   useEffect,
   useState,
 } from "react";
@@ -57,3 +58,4 @@ export const ColorModeContextProvider: React.FC<PropsWithChildren> = ({
     </ColorModeContext.Provider>
   );
 };
+export const useColorMode = () => useContext(ColorModeContext);

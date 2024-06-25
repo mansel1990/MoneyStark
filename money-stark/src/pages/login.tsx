@@ -14,7 +14,7 @@ import { AppIcon } from "../components/app-icon";
 const GOOGLE_CLIENT_ID =
   "1041339102270-e1fpe2b6v6u1didfndh7jkjmpcashs4f.apps.googleusercontent.com";
 
-export const Login: React.FC = () => {
+const Login: React.FC = () => {
   const { mutate: login } = useLogin<CredentialResponse>();
 
   const GoogleButton = (): JSX.Element => {
@@ -88,3 +88,5 @@ export const Login: React.FC = () => {
     </Container>
   );
 };
+
+export default Login;
