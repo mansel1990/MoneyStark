@@ -15,12 +15,7 @@
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s ease;
-
-      &.dark {
-        background-color: @dark-background-color;
-        color: @dark-header-color;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      }
+      border: 1px solid;
     }
 
     .MuiAccordionSummary-root {
@@ -29,19 +24,7 @@
       border-bottom: 1px solid #ddd;
 
       .MuiIconButton-root {
-        color: @light-primary-color; /* Light mode icon color */
-      }
-
-      &.dark {
-        background-color: @dark-background-color;
-        color: @dark-header-color;
-
-        .MuiIconButton-root {
-          color: @dark-header-color;
-        }
-        .MuiAccordionSummary-expandIconWrapper {
-          color: @dark-header-color !important;
-        }
+        color: @light-primary-color;
       }
     }
 
@@ -49,11 +32,6 @@
       padding: 10px;
       background-color: @light-background-color;
       color: @light-header-color;
-
-      &.dark {
-        background-color: @dark-background-color;
-        color: @dark-header-color;
-      }
     }
 
     .prediction-details {
@@ -65,15 +43,41 @@
     }
   }
 
+  &.light {
+    .prediction-item {
+      border: 1px solid #ccc;
+    }
+  }
+
+  &.dark {
+    .prediction-item {
+      .MuiAccordion-root {
+        background-color: @dark-background-color;
+        color: @dark-header-color;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border-color: @dark-header-color;
+      }
+
+      .MuiAccordionSummary-root {
+        background-color: @dark-background-color;
+        color: @dark-header-color;
+
+        .MuiIconButton-root {
+          color: @dark-header-color;
+        }
+        .MuiAccordionSummary-expandIconWrapper {
+          color: @dark-header-color!important;
+        }
+      }
+
+      .MuiAccordionDetails-root {
+        background-color: @dark-background-color;
+        color: @dark-header-color;
+      }
+    }
+  }
+
   .MuiAccordion-root:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-}
-
-.search-input {
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
   }
 }

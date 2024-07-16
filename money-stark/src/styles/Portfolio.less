@@ -1,0 +1,59 @@
+.portfolio {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+  }
+}
+
+.list-container {
+  flex: 1;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.details-container {
+  flex: 2;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.list {
+  padding: 0;
+}
+
+.list-item {
+  padding: 10px 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  .MuiListItemText-primary {
+    font-weight: bold;
+  }
+}
+
+.details {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.total-value {
+  margin-top: 20px;
+}

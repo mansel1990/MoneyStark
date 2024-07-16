@@ -11,6 +11,7 @@ import PredictionList from "./pages/PredictionList/PredictionList";
 import Login from "./pages/login";
 import Header from "./components/header/Header";
 import { AppIcon } from "./components/app-icon";
+import PortfolioTable from "./pages/Portfolio/PortfolioTable";
 
 const AppRoutes = () => {
   return (
@@ -42,6 +43,9 @@ const AppRoutes = () => {
         </Route>
         <Route path="/prediction-list">
           <Route index element={<PredictionList />} />
+        </Route>
+        <Route path="/portfolio">
+          <Route index element={<PortfolioTable />} />
         </Route>
         <Route path="*" element={<ErrorComponent />} />
       </Route>

@@ -9,7 +9,6 @@ import { notificationProvider, RefineSnackbarProvider } from "@refinedev/mui";
 import CssBaseline from "@mui/material/CssBaseline";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import routerBindings, {
-  DocumentTitleHandler,
   UnsavedChangesNotifier,
 } from "@refinedev/react-router-v6";
 import dataProvider from "@refinedev/simple-rest";
@@ -17,9 +16,11 @@ import axios from "axios";
 import { ColorModeContextProvider } from "./contexts/color-mode";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AssessmentIcon from "@mui/icons-material/Assessment";
-import authProvider from "./AuthBindings"; // Import the authProvider from AuthBindings
+import QueryStatsIcon from "@mui/icons-material/QueryStats";
+import authProvider from "./AuthBindings";
 import "./styles/App.less";
 import AppRoutes from "./Routes";
+import { CustomDocumentTitleHandler } from "./components/common/CustomDocumentTitleHandler";
 
 const axiosInstance = axios.create();
 
@@ -43,7 +44,7 @@ function App() {
               <Refine
                 dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
                 notificationProvider={notificationProvider}
-                authProvider={authProvider} // Use the authProvider imported from AuthBindings
+                authProvider={authProvider}
                 routerProvider={routerBindings}
                 resources={[
                   {
@@ -62,6 +63,14 @@ function App() {
                       canDelete: true,
                     },
                   },
+                  {
+                    name: "portfolio",
+                    list: "/portfolio",
+                    icon: <QueryStatsIcon />,
+                    meta: {
+                      canDelete: true,
+                    },
+                  },
                 ]}
                 options={{
                   syncWithLocation: true,
@@ -74,7 +83,7 @@ function App() {
 
                 <RefineKbar />
                 <UnsavedChangesNotifier />
-                <DocumentTitleHandler />
+                <CustomDocumentTitleHandler />
               </Refine>
             </DevtoolsProvider>
           </RefineSnackbarProvider>

@@ -1,12 +1,6 @@
 import React from "react";
-import {
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Typography,
-} from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useColorMode } from "../../contexts/color-mode";
+
+import AccordionList from "../../components/common/AccordionList";
 
 const rows = [
   {
@@ -35,32 +29,7 @@ const rows = [
 ];
 
 const PredictionTable = () => {
-  const { mode } = useColorMode();
-
-  return (
-    <div className={`prediction-table${mode}`}>
-      {rows.map((row) => (
-        <Accordion key={row.id} className="prediction-item">
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls={`panel-${row.id}-content`}
-            id={`panel-${row.id}-header`}
-          >
-            <Typography>{row.title}</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <div className="prediction-details">
-              <Typography>Buy At: {row.buyAt}</Typography>
-              <Typography>
-                Date of Prediction: {row.dateOfPrediction}
-              </Typography>
-              <Typography>{row.details}</Typography>
-            </div>
-          </AccordionDetails>
-        </Accordion>
-      ))}
-    </div>
-  );
+  return <AccordionList rows={rows} />;
 };
 
 export default PredictionTable;

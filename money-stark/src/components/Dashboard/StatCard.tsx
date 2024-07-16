@@ -1,22 +1,34 @@
+import { InsertChart } from "@mui/icons-material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
+import { useColorMode } from "../../contexts/color-mode";
 
 interface Props {
-  icon: React.ReactNode;
   title: string;
-  count: number;
-  percentage: number;
+  value: number;
+  icon: React.ReactNode;
 }
 
-const StatCard: React.FC<Props> = ({ icon, title, count, percentage }) => {
+const StatCard: React.FC<Props> = ({ title, value, icon }) => {
+  const { mode } = useColorMode();
+
   return (
-    <div className="stat-card">
-      <div className="icon-container">{icon}</div>
-      <div className="info">
-        <p className="title">{title}</p>
-        <p className="count">{count}</p>
-        <p className="percentage">+{percentage}% than last week</p>
-      </div>
-    </div>
+    <Box
+      className={`stat-card ${mode}`}
+      display="flex"
+      alignItems="center"
+      p={2}
+    >
+      {icon}
+      <Box ml={2}>
+        <Typography variant="h6" gutterBottom>
+          {title}
+        </Typography>
+        <Typography variant="h5" gutterBottom>
+          {value}
+        </Typography>
+      </Box>
+    </Box>
   );
 };
 
