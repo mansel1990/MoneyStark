@@ -12,6 +12,9 @@ import Login from "./pages/login";
 import Header from "./components/header/Header";
 import { AppIcon } from "./components/app-icon";
 import PortfolioTable from "./pages/Portfolio/PortfolioTable";
+import SwingTrading from "./pages/SwingTrading/SwingTrading";
+import StockSelection from "./pages/SwingTrading/StockSelection/StockSelection";
+import StockAnalysis from "./pages/SwingTrading/StockAnalysis/StockAnalysis";
 
 const AppRoutes = () => {
   return (
@@ -46,6 +49,11 @@ const AppRoutes = () => {
         </Route>
         <Route path="/portfolio">
           <Route index element={<PortfolioTable />} />
+        </Route>
+        <Route path="/swing">
+          <Route index element={<SwingTrading />} />
+          <Route path="selection" element={<StockSelection />} />
+          <Route path="analysis" element={<StockAnalysis />} />
         </Route>
         <Route path="*" element={<ErrorComponent />} />
       </Route>

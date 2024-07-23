@@ -50,9 +50,7 @@ const PortfolioTable = () => {
   useEffect(() => {
     const symbols = data.map((row) => row.stockSymbol).join(",");
     const fetchPrices = async () => {
-      const currentPriceDataResponse = await fetchCurrentStockPrice(symbols);
       const prices: StockPrices = {};
-      console.log("s===>", currentPriceDataResponse);
       setStockPrices(prices);
     };
 

@@ -17,6 +17,7 @@ import { ColorModeContextProvider } from "./contexts/color-mode";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import QueryStatsIcon from "@mui/icons-material/QueryStats";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import authProvider from "./AuthBindings";
 import "./styles/App.less";
 import AppRoutes from "./Routes";
@@ -67,6 +68,14 @@ function App() {
                     name: "portfolio",
                     list: "/portfolio",
                     icon: <QueryStatsIcon />,
+                    meta: {
+                      canDelete: true,
+                    },
+                  },
+                  {
+                    name: "swing",
+                    list: "/swing",
+                    icon: <TrendingUpIcon />,
                     meta: {
                       canDelete: true,
                     },
